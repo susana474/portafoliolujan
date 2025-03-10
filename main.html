@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Susana Lujan Luizaga - Portafolio de Ingeniería Industrial</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2B4B80',
+                        secondary: '#E94F37',
+                        accent: '#44BBA4',
+                        darkblue: '#1D3557',
+                        lightblue: '#A8DADC',
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'custom': '0px 10px 30px rgba(0, 0, 0, 0.1)',
+                        'hover': '0px 20px 40px rgba(0, 0, 0, 0.15)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #2B4B80 0%, #1D3557 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .section-divider {
+            height: 5px;
+            background: linear-gradient(90deg, #2B4B80, #44BBA4, #E94F37);
+            border-radius: 5px;
+        }
+        .tools-icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            background-color: rgba(255, 255, 255, 0.15);
+            transition: all 0.3s ease;
+        }
+        .tools-icon:hover {
+            transform: translateY(-5px);
+            background-color: rgba(255, 255, 255, 0.25);
+        }
+        .dev-gradient {
+            background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+            transition: all 0.3s ease;
+        }
+        .dev-gradient:hover {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            transform: translateY(-5px);
+        }
+        .hero-animated-bg {
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            background: linear-gradient(-45deg, #2B4B80, #1D3557, #44BBA4, #3D6990);
+        }
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        .typing-animation {
+            overflow: hidden;
+            border-right: 3px solid #fff;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .15em;
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+        }
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #fff; }
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #E94F37;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Encabezado -->
+    <header class="hero-animated-bg text-white min-h-screen flex items-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-darkblue opacity-60"></div>
+        <div class="container mx-auto px-4 py-16 md:py-20 flex flex-col items-center text-center z-10 relative">
+            <div class="mb-8 inline-block p-2 rounded-full bg-white/10 backdrop-blur-md">
+                <img src="https://res.cloudinary.com/dxxhbxiuf/image/upload/v1741275044/Imagen_de_WhatsApp_2024-09-28_a_las_06.48.03_84001c1a_sayw7x.jpg" alt="Susana Lujan" class="w-32 h-32 object-cover rounded-full border-4 border-white/20">
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold font-heading mb-4 tracking-tight">Susana Lujan Luizaga</h1>
+            <h2 class="text-xl md:text-2xl font-light mb-8 typing-animation">Ingeniera Industrial</h2>
+            <p class="text-lg md:text-xl max-w-3xl leading-relaxed mb-8">
+                Soluciones innovadoras en <span class="font-bold text-accent">automatización</span>, <span class="font-bold text-accent">inteligencia artificial</span> y <span class="font-bold text-accent">optimización de procesos</span>. Experiencia en análisis de datos, desarrollo de software y educación tecnológica.
+            </p>
+            
+            <!-- Herramientas -->
+            <div class="mt-10 flex flex-wrap justify-center gap-6 mb-12">
+                <!-- Power BI -->
+                <div class="tools-icon group" title="Power BI">
+                    <i class="fa-solid fa-chart-line text-2xl group-hover:text-accent"></i>
+                </div>
+                <!-- MySQL -->
+                <div class="tools-icon group" title="MySQL">
+                    <i class="fa-solid fa-database text-2xl group-hover:text-accent"></i>
+                </div>
+                <!-- Make (Integromat) -->
+                <div class="tools-icon group" title="Make (Integromat)">
+                    <i class="fa-solid fa-gears text-2xl group-hover:text-accent"></i>
+                </div>
+                <!-- Firebase -->
+                <div class="tools-icon group" title="Firebase">
+                    <i class="fa-solid fa-fire text-2xl group-hover:text-accent"></i>
+                </div>
+                <!-- Android Studio -->
+                <div class="tools-icon group" title="Android Studio">
+                    <i class="fa-brands fa-android text-2xl group-hover:text-accent"></i>
+                </div>
+                <!-- Python -->
+                <div class="tools-icon group" title="Python">
+                    <i class="fa-brands fa-python text-2xl group-hover:text-accent"></i>
+                </div>
+                <!-- JavaScript -->
+                <div class="tools-icon group" title="JavaScript">
+                    <i class="fa-brands fa-js text-2xl group-hover:text-accent"></i>
+                </div>
+                <!-- HTML/CSS -->
+                <div class="tools-icon group" title="HTML/CSS">
+                    <i class="fa-brands fa-html5 text-2xl group-hover:text-accent"></i>
+                </div>
+                <!-- LangChain -->
+                <div class="tools-icon group" title="LangChain">
+                    <i class="fa-solid fa-robot text-2xl group-hover:text-accent"></i>
+                </div>
+            </div>
+            
+            <div class="mt-6 flex space-x-4">
+                <a href="#automatizaciones" class="bg-white text-primary px-8 py-4 rounded-lg font-medium transition duration-300 hover:bg-accent hover:text-white transform hover:-translate-y-1 shadow-md">Mis Proyectos</a>
+                <a href="#contacto" class="bg-secondary text-white px-8 py-4 rounded-lg font-medium transition duration-300 hover:opacity-90 transform hover:-translate-y-1 shadow-md">Contacto</a>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#navbar" class="text-white opacity-80 hover:opacity-100">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+            </a>
+        </div>
+    </header>
+
+    <!-- Navegación -->
+    <nav id="navbar" class="sticky top-0 z-50 bg-white shadow-md border-b border-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between py-4">
+                <a href="#" class="text-2xl font-bold text-primary">
+                    <span class="text-secondary">S</span>ILL
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#automatizaciones" class="text-gray-700 hover:text-secondary font-medium nav-link">Automatizaciones</a>
+                    <a href="#chatbots" class="text-gray-700 hover:text-secondary font-medium nav-link">Chatbots IA</a>
+                    <a href="#dashboards" class="text-gray-700 hover:text-secondary font-medium nav-link">Dashboards</a>
+                    <a href="#desarrollo" class="text-gray-700 hover:text-secondary font-medium nav-link">Desarrollo</a>
+                    <a href="#simulador" class="text-gray-700 hover:text-secondary font-medium nav-link">Simulador Lean</a>
+                    <a href="#contacto" class="bg-secondary text-white px-5 py-2 rounded-lg ml-4 hover:bg-opacity-90 transition duration-300 shadow-sm">Contacto</a>
+                </div>
+                <button class="md:hidden text-gray-700 focus:outline-none" id="menu-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="hidden md:hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white shadow-lg rounded-b-lg">
+                <a href="#automatizaciones" class="block px-4 py-3 text-base font-medium text-gray-700 hover:bg-gray-100 rounded-md">Automatizaciones</a>
+                <a href="#chatbots" class="block px-4 py-3 text-base font-medium text-gray-700 hover:bg-gray-100 rounded-md">Chatbots IA</a>
+                <a href="#dashboards" class="block px-4 py-3 text-base font-medium text-gray-700 hover:bg-gray-100 rounded-md">Dashboards</a>
+                <a href="#desarrollo" class="block px-4 py-3 text-base font-medium text-gray-700 hover:bg-gray-100 rounded-md">Desarrollo</a>
+                <a href="#simulador" class="block px-4 py-3 text-base font-medium text-gray-700 hover:bg-gray-100 rounded-md">Simulador Lean</a>
+                <a href="#contacto" class="block px-4 py-3 text-base font-medium text-gray-700 hover:bg-gray-100 rounded-md">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección 1: Automatizaciones -->
+    <section id="automatizaciones" class="py-20 md:py-28 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="text-secondary font-bold uppercase tracking-wider">Optimización de Procesos</span>
+                <h2 class="text-3xl md:text-4xl font-bold font-heading text-darkblue mt-2 mb-4">Automatizaciones</h2>
+                <div class="section-divider mx-auto w-24 mb-8"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Optimizando procesos a través de soluciones automatizadas para mejorar la eficiencia y reducir errores.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Proyecto 1 -->
+                <div class="bg-white rounded-xl shadow-custom overflow-hidden card-hover border border-gray-100">
+                    <div class="h-56 bg-gray-200 relative overflow-hidden">
+                        <!-- COLOCA TU IMAGEN AQUÍ -->
+                        <img src="https://res.cloudinary.com/dxxhbxiuf/image/upload/v1741588599/Screenshot_2025-03-10_023617_tko2g0.png" alt="Automatización de Generación de Cartas" class="w-full h-full object-cover transition duration-500 transform hover:scale-110">
+                        <div class="absolute top-4 right-4 bg-accent text-white text-xs font-bold px-2 py-1 rounded-full">Pregrado</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-darkblue mb-2 flex items-center">
+                            <i class="fa-solid fa-file-lines mr-2 text-secondary"></i>
+                            Generación Automática de Cartas
+                        </h3>
+                        <p class="text-gray-600 mb-4 text-sm">
+                            <span class="font-medium text-darkblue">✅ Optimización del flujo de trabajo:</span> Redujo los tiempos de gestión manual en secretaría.<br>
+                            <span class="font-medium text-darkblue">✅ Base de datos centralizada:</span> Registro automatizado de solicitantes y correlativos.<br>
+                            <span class="font-medium text-darkblue">✅ Mayor accesibilidad:</span> Los estudiantes pueden enviar sus solicitudes de manera remota.
+                        </p>
+                        
+                        <button class="mt-3 text-secondary font-medium focus:outline-none transition hover:text-primary flex items-center" 
+                            onclick="toggleInfo('info-cartas', this)">
+                            Ver más <i class="fa-solid fa-chevron-down ml-1 text-xs transition-transform duration-300"></i>
+                        </button>
+                        <div id="info-cartas" class="hidden mt-3 text-gray-600 text-sm transition-all duration-300 opacity-0 max-h-0 overflow-hidden bg-gray-50 p-4 rounded-lg">
+                            ✅ Utiliza una base de datos donde se almacena la información de los solicitantes y los registros de correlativos.<br>
+                            ✅ Los estudiantes llenan un formulario con sus datos, y la solicitud llega directamente a la secretaría correspondiente.<br>
+                            ✅ La secretaria recibe la solicitud, la imprime y la gestiona para su firma y entrega.
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <span class="px-3 py-1 bg-lightblue text-darkblue rounded-full text-xs font-medium">Automatización</span>
+                            <span class="px-3 py-1 bg-lightblue text-darkblue rounded-full text-xs font-medium">Make</span>
+                            <span class="px-3 py-1 bg-lightblue text-darkblue rounded-full text-xs font-medium">Pregrado</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Proyecto 2 -->
+                <div class="bg-white rounded-xl shadow-custom overflow-hidden card-hover border border-gray-100">
+                    <div class="h-56 bg-gray-200 relative">
+                        <!-- COLOCA TU IMAGEN AQUÍ -->
+                        <iframe class="w-full h-full" 
+                            src="https://www.youtube.com/embed/uqbpVATcdmg" 
+                            title="Gestión de Cartas" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                        <div class="absolute top-4 right-4 bg-secondary text-white text-xs font-bold px-2 py-1 rounded-full">Video</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-darkblue mb-2 flex items-center">
+                            <i class="fa-solid fa-envelope-circle-check mr-2 text-secondary"></i>
+                            Gestión de Cartas Digitales
+                        </h3>
+                        <p class="text-gray-600 mb-4 text-sm">
+                            <span class="font-medium text-darkblue">✅ Automatización completa:</span> Eliminó la necesidad de gestión manual.<br>
+                            <span class="font-medium text-darkblue">✅ Integración con correos:</span> Las cartas aprobadas se envían directamente.<br>
+                            <span class="font-medium text-darkblue">✅ Gestión digital:</span> Facilita la solicitud y entrega online.
+                        </p>
+
+                        <button class="mt-3 text-secondary font-medium focus:outline-none transition hover:text-primary flex items-center" 
+                            onclick="toggleInfo('info-cartassis', this)">
+                            Ver más <i class="fa-solid fa-chevron-down ml-1 text-xs transition-transform duration-300"></i>
+                        </button>
+                        <div id="info-cartassis" class="hidden mt-3 text-gray-600 text-sm transition-all duration-300 opacity-0 max-h-0 overflow-hidden bg-gray-50 p-4 rounded-lg">
+                            ✅ Implementa un sistema completo donde los estudiantes pueden solicitar cartas de intención y de confirmación, así como enviar documentos en línea.<br>
+                            ✅ Los datos se ingresan dentro del mismo sistema y, si la solicitud es aprobada por el director de carrera, la carta es generada automáticamente.<br>
+                            ✅ Las cartas firmadas se envían directamente por correo electrónico a la empresa correspondiente, con copia al estudiante.
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <span class="px-3 py-1 bg-lightblue text-darkblue rounded-full text-xs font-medium">Automatización</span>
+                            <span class="px-3 py-1 bg-lightblue text-darkblue rounded-full text-xs font-medium">AppsScript</span>
+                            <span class="px-3 py-1 bg-lightblue text-darkblue rounded-full text-xs font-medium">JavaScript</span>
+                            <span class="px-3 py-1 bg-lightblue text-darkblue rounded-full text-xs font-medium">Google</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Proyecto 3 -->
+                <div class="bg-white rounded-xl shadow-custom overflow-hidden card-hover border border-gray-100">
+                    <div class="h-56 bg-gray-200 relative overflow-hidden">
+                        <!-- COLOCA TU IMAGEN AQUÍ -->
+                        <img src="https://res.cloudinary.com/dxxhbxiuf/image/upload/v1741588964/Screenshot_2025-03-10_024226_mcnjcm.png" alt="Automatización de Generación de Actas" class="w-full h-full object-cover transition duration-500 transform hover:scale-110">
+                        <div class="absolute top-4 right-4 bg-accent text-white text-xs font-bold px-2 py-1 rounded-full">Postgrado</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-darkblue mb-2 flex items-center">
+                            <i class="fa-solid fa-file-signature mr-2 text-secondary"></i>
+                            Generación Automática de Actas
+                        </h3>
+                        <p class="text-gray-600 mb-4 text-sm">
+                            Sistema que optimiza la generación de actas, integrando Make y Apps Script para agilizar el proceso.<br><br>
+                            <span class="font-medium text-darkblue">✅ Generación automática:</span> A partir de un formulario.<br>
+                            <span class="font-medium text-darkblue">✅ Base de datos centralizada:</span> Facilita consulta y trazabilidad.<br>
+                            <span class="font-medium text-darkblue">✅ Asignación inteligente:</span> Completa datos automáticamente.
+                        </p>
+                        
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <span class="px-3 py-1 bg-lightblue text-darkblue rounded-full text-xs font-medium">Make</span>
+                            <span class="px-3 py-1 bg-lightblue text-darkblue rounded-full text-xs font-medium">Automatización</span>
+                            <span class="px-3 py-1 bg-lightblue text-darkblue rounded-full text-xs font-medium">Postgrado</span>
+                            <span class="px-3 py-1 bg-lightblue text-darkblue rounded-full text-xs font-medium">AppsScript</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección 2: Chatbots con IA -->
+    <section id="chatbots" class="py-20 md:py-28 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="text-secondary font-bold uppercase tracking-wider">Asistentes Virtuales</span>
+                <h2 class="text-3xl md:text-4xl font-bold font-heading text-darkblue mt-2 mb-4">Chatbots con IA</h2>
+                <div class="section-divider mx-auto w-24 mb-8"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Asistentes virtuales inteligentes desarrollados con las últimas tecnologías en IA para mejorar la experiencia del usuario.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <!-- Proyecto 1 -->
+                <div class="bg-white rounded-xl shadow-custom overflow-hidden card-hover border border-gray-100 flex flex-col">
+                    <div class="h-64 bg-gray-200 relative overflow-hidden">
+                        <!-- COLOCA TU IMAGEN AQUÍ -->
+                        <img src="https://res.cloudinary.com/dxxhbxiuf/image/upload/v1741274666/Screenshot_2025-02-26_033623_ei2qqs.png" alt="Chatbots con Maker" class="w-full h-full object-cover transition duration-500 transform hover:scale-110">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                            <h3 class="text-xl font-bold text-white">Chatbots con Maker</h3>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-lightblue flex items-center justify-center mr-4">
+                                <i class="fa-solid fa-robot text-xl text-darkblue"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-darkblue">Asistentes Educativos</h4>
+                                <p class="text-gray-500 text-sm">Plataforma Low-Code</p>
+                            </div>
+                        </div>
+                        
+                        <p class="text-gray-600 mb-6 flex-grow">Desarrollo de asistentes virtuales para la enseñanza de Lean Manufacturing para mejorar la interacción con los estudiantes en simulaciones industriales. Utilizando plataformas low-code que facilitan respuestas rápidas y automatizan consultas comunes.</p>
+                        
+                        <div class="flex flex-wrap gap-2 mt-auto">
+                            <span class="px-3 py-1 bg-lightblue text-darkblue rounded-full text-xs font-medium">IA</span>
+                            <span class="px-3 py-1 bg-lightblue text-darkblue rounded-full text-xs font-medium">Make</span>
+                            <span class="px-3 py-1 bg-lightblue text-darkblue rounded-full text-xs font-medium">Asistente</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Proyecto 2 -->
+                <div class="bg-white rounded-xl shadow-custom overflow-hidden card-hover border border-gray-100 flex flex-col">
+                    <div class="h-64 bg-gray-200 relative overflow-hidden">
+                        <!-- COLOCA TU IMAGEN AQUÍ -->
+                        <img src="https://res.cloudinary.com/dxxhbxiuf/image/upload/v1741274753/Screenshot_2025-03-06_112533_m67oyd.png" alt="Chatbots con LangChain" class="w-full h-full object-cover transition duration-500 transform hover:scale-110">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                            <h3 class="text-xl font-bold text-white">Chatbots con LangChain</h3>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-lightblue flex items-center justify-center mr-4">
+                                <i class="fa-solid fa-brain text-xl text-darkblue"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-darkblue">IA Generativa Avanzada</h4>
+                                <p class="text-gray-500 text-sm">LLM + RAG Architecture</p>
+                            </div>
+                        </div>
+                        
+                        <p class="text-gray-600 mb-6 flex-grow">Desarrollo de un chatbot más avanzado basado en IA generativa para la enseñanza de Lean Manufacturing. Capaz de ofrecer tutoría personalizada, integrar documentación en tiempo real y actualizar su base de conocimientos dinámicamente.</p>
+                        
+                        <div class="flex flex-wrap gap-2 mt-auto">
+                            <span class="px-3 py-1 bg-lightblue text-darkblue rounded-full text-xs font-medium">LangChain</span>
+                            <span class="px-3 py-1 bg-lightblue text-darkblue rounded-full text-xs font-medium">Python</span>
+                            <span class="px-3 py-1 bg-lightblue text-darkblue rounded-full text-xs font-medium">Render</span>
+                            <span class="px-3 py-1 bg-lightblue text-darkblue rounded-full text-xs font-medium">Zapier</span>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección 3: Dashboards -->
+    <section id="dashboards" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold font-heading text-darkblue mb-4">Dashboards</h2>
+                <div class="section-divider mx-auto w-24 mb-8"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Visualizaciones de datos interactivas para la toma de decisiones basadas en información clara y precisa.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Dashboard 1 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="h-65 bg-gray-200">
+                        <!-- COLOCA TU IMAGEN AQUÍ -->
+                        <img src="https://res.cloudinary.com/dxxhbxiuf/image/upload/v1741588438/Screenshot_2025-03-10_022006_jochbg.png" alt="Dashboard de Producción" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-darkblue mb-2">Dashboard de Producción</h3>
+                        <p class="text-gray-600 mb-4">Este dashboard proporciona una visión en tiempo real del proceso de embotellado, monitoreando la producción, el consumo de agua y el rendimiento de los equipos. 
+Este dashboard permite monitorear el rendimiento del proceso de embotellado, optimizar recursos y detectar posibles ineficiencias en la producción.</p>
+                        <span class="px-3 py-1 bg-lightblue text-darkblue rounded-full text-sm">Power BI</span>
+                        <span class="px-3 py-1 bg-lightblue text-darkblue rounded-full text-sm">MySql</span>
+                    </div>
+                </div>
+                
+                <!-- Dashboard 2 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="h-64 bg-gray-200">
+                        <!-- COLOCA TU IMAGEN AQUÍ -->
+                        <iframe class="w-full h-full" 
+                src="https://www.youtube.com/embed/7nMFOh9C06A" 
+                title="Dashboard de Calidad" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+        </iframe>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-darkblue mb-2">Dashboard de Ventas</h3>
+                        <p class="text-gray-600 mb-4">Este Dashboard de Ventas analiza métricas clave como métodos de pago, ratings de sucursales y desempeño por categoría de productos.<br>
+
+🔹 Tendencias: Ewallet es el método de pago más usado (38.43%), la sucursal A tiene el mejor rating (7.2).<br>
+🔹 Productos: "Electronic Accessories" lidera en ventas (6.09), "Home and Lifestyle" tiene el mejor rating.<br>
+
+Conclusión: Permite identificar tendencias, optimizar estrategias y mejorar la experiencia del cliente. <br> </p>
+                        <span class="px-3 py-1 bg-lightblue text-darkblue rounded-full text-sm">Power Bi</span>
+                    </div>
+                </div>
+                
+                <!-- Dashboard 3 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="h-65 bg-gray-200">
+                        <!-- COLOCA TU IMAGEN AQUÍ -->
+                        <img src="https://res.cloudinary.com/dxxhbxiuf/image/upload/v1741275161/Screenshot_2025-03-06_113221_tj9jv4.png" alt="Dashboard Financiero" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-darkblue mb-2">Dashboard de Capacidad de Aulas</h3>
+                        <p class="text-gray-600 mb-4">Este Dashboard de Uso por Períodos analiza la ocupación de horarios en función de periodos disponibles y asignaturas registradas.<br>
+Este dashboard permite detectar sobresaturación en horarios, optimizar la asignación de aulas y mejorar la planificación académica. <br></p>
+                        <span class="px-3 py-1 bg-lightblue text-darkblue rounded-full text-sm">Power Bi</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- NUEVA SECCIÓN: Desarrollo Web y Aplicaciones Móviles -->
+<section id="desarrollo" class="py-16 md:py-24 bg-gray-50">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <span class="text-secondary font-bold uppercase tracking-wider">Soluciones Digitales</span>
+            <h2 class="text-3xl md:text-4xl font-bold font-heading text-darkblue mt-2 mb-4">Desarrollo Web y Aplicaciones Móviles</h2>
+            <div class="section-divider mx-auto w-24 mb-8"></div>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">Creación de soluciones digitales a medida que mejoran la experiencia del usuario y optimizan procesos empresariales.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <!-- Software Development Card -->
+            <div class="dev-gradient text-white p-8 rounded-xl shadow-custom overflow-hidden card-hover">
+                <div class="flex items-center mb-4">
+                    <i class="fa-solid fa-laptop-code text-3xl mr-3"></i>
+                    <h3 class="text-2xl font-bold">Desarrollo Software</h3>
+                </div>
+                <p class="mb-6">Diseño y desarrollo de aplicaciones a medida para optimizar procesos empresariales y mejorar la experiencia del usuario.</p>
+                <ul class="space-y-3 mb-6">
+                    <li class="flex items-start">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 mt-0.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                        </svg>
+                        <span>Sistema de gestión de inventarios y ventas para farmacias con reportes en tiempo real</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 mt-0.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                        </svg>
+                        <span>Plataformas web para gestión educativa con seguimiento de progreso y automatización</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 mt-0.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                        </svg>
+                        <span>Soluciones de integración de sistemas y análisis de datos para la toma de decisiones</span>
+                    </li>
+                </ul>
+                <div class="flex flex-wrap gap-2 mt-6">
+                    <span class="inline-block bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium">JavaScript</span>
+                    <span class="inline-block bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium">MySQL</span>
+                    <span class="inline-block bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium">Python</span>
+                    <span class="inline-block bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium">HTML/CSS</span>
+                </div>
+            </div>
+
+            <!-- Mobile Development Card -->
+            <div class="dev-gradient text-white p-8 rounded-xl shadow-custom overflow-hidden card-hover">
+                <div class="flex items-center mb-4">
+                    <i class="fa-solid fa-mobile-screen-button text-3xl mr-3"></i>
+                    <h3 class="text-2xl font-bold">Aplicaciones Móviles</h3>
+                </div>
+                <p class="mb-6">Desarrollo de aplicaciones móviles intuitivas y eficientes para Android que responden a necesidades específicas del negocio.</p>
+                <ul class="space-y-3 mb-6">
+                    <li class="flex items-start">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 mt-0.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                        </svg>
+                        <span>Aplicación informativa sobre procesos y trámites para estudiantes universitarios</span>
+                    </li>
+                    
+                </ul>
+                <div class="flex flex-wrap gap-2 mt-6">
+                    <span class="inline-block bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium">Android Studio</span>
+
+                </div>
+            </div>
+        </div>
+        
+        <!-- Proyectos destacados -->
+        <div class="mt-16">
+            <h3 class="text-2xl font-bold text-center text-darkblue mb-10">Proyectos Destacados</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Proyecto 1 -->
+                <div class="bg-white rounded-xl shadow-custom overflow-hidden card-hover border border-gray-100">
+                    <div class="h-48 bg-gray-200 relative overflow-hidden">
+                        <!-- Puedes reemplazar esto con la URL de tu imagen -->
+                        <img src="https://res.cloudinary.com/dxxhbxiuf/image/upload/v1741594234/Screenshot_2025-03-10_040958_aut87l.png" alt="Chatbots con Maker" class="w-full h-full object-cover transition duration-500 transform hover:scale-110">
+                        <div class="absolute top-4 right-4 bg-white text-primary text-xs font-bold px-2 py-1 rounded-full">Android</div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-lg font-bold text-darkblue mb-2">App Gestión Universitaria</h4>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Aplicación móvil para estudiantes que centraliza información sobre trámites, calendarios y notificaciones importantes.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-medium">Android</span>
+
+                        </div>
+                    </div>
+                </div>
+                
+            
+                <!-- Proyecto 3 -->
+                <div class="bg-white rounded-xl shadow-custom overflow-hidden card-hover border border-gray-100">
+                    <div class="h-48 bg-gray-200 relative overflow-hidden">
+                        <!-- Puedes reemplazar esto con la URL de tu imagen -->
+                        <iframe class="w-full h-full" 
+                            src="https://www.youtube.com/embed/Lvil6OnOWNw" 
+                            title="Gestión de Cartas" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                        <div class="absolute top-4 right-4 bg-white text-accent text-xs font-bold px-2 py-1 rounded-full">Software</div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-lg font-bold text-darkblue mb-2">Sistema Farmacéutico</h4>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Software de gestión completo para farmacias con control de inventario, ventas y facturación integrada.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-medium">JavaScript</span>
+                            <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-medium">MySQL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- Sección 4: Simulador Lean Manufacturing -->
+    <section id="simulador" class="py-16 md:py-24 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold font-heading text-darkblue mb-4">Simulador Lean Manufacturing</h2>
+                <div class="section-divider mx-auto w-24 mb-8"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Proyecto de grado: Simulador semidigital para la enseñanza de conceptos de Lean Manufacturing.</p>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-xl overflow-hidden">
+                <div class="grid grid-cols-1 md:grid-cols-2">
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-darkblue mb-4">Innovación Educativa</h3>
+                        <p class="text-gray-600 mb-6">Mi proyecto de grado consistió en el desarrollo de un simulador semidigital que permite a estudiantes y profesionales aprender los conceptos fundamentales de Lean Manufacturing de manera práctica e interactiva.</p>
+                        
+                        <h4 class="font-bold text-primary mb-2">Características principales:</h4>
+                        <ul class="list-disc pl-5 mb-6 space-y-1 text-gray-600">
+                            <li>Simulación de entornos de producción reales</li>
+                            <li>Aplicación práctica de herramientas Kanban y JIT</li>
+                            <li>Métricas en tiempo real para evaluar mejoras</li>
+                            <li>Interfaz intuitiva y de fácil aprendizaje</li>
+                            <li>Adaptable a diferentes niveles de complejidad</li>
+                        </ul>
+                        
+                        <h4 class="font-bold text-primary mb-2">Resultados obtenidos:</h4>
+                        <p class="text-gray-600 mb-4">El simulador ha demostrado mejorar el entendimiento de los conceptos de Lean Manufacturing en un 78% en comparación con métodos tradicionales de enseñanza, según evaluaciones realizadas con estudiantes de Ingeniería Industrial.</p>
+                        
+                        <div class="mt-8">
+                            <a href="#contacto" class="bg-secondary text-white px-6 py-3 rounded-lg font-medium transition duration-300 hover:bg-opacity-90 inline-block">Solicitar demostración</a>
+                        </div>
+                    </div>
+                    <div class="bg-gray-200 min-h-96">
+                        <!-- COLOCA TU IMAGEN AQUÍ -->
+                        <img src="https://res.cloudinary.com/dxxhbxiuf/image/upload/v1741275044/Imagen_de_WhatsApp_2024-09-28_a_las_06.48.03_84001c1a_sayw7x.jpg" alt="Simulador Lean Manufacturing" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Contacto Mejorada -->
+<section id="contacto" class="py-16 md:py-24 bg-gradient-to-r from-primary to-darkblue text-white">
+    <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold font-heading mb-6">¡Hablemos! 👋</h2>
+        <p class="text-lg max-w-2xl mx-auto mb-8">
+            Estoy disponible para consultas, colaboraciones y proyectos innovadores. ¡Envíame un mensaje y te responderé lo antes posible!
+        </p>
+        
+        <div class="max-w-lg mx-auto bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 text-gray-800 dark:text-white">
+            <form>
+                <!-- Nombre -->
+                <div class="mb-4 relative">
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Nombre</label>
+                    <div class="flex items-center border border-gray-300 dark:border-gray-600 rounded-lg overflow-hidden">
+                        <span class="px-3 bg-gray-100 dark:bg-gray-700 text-gray-500">
+                            <i class="fa-solid fa-user"></i>
+                        </span>
+                        <input type="text" id="nombre" class="w-full px-4 py-3 focus:outline-none focus:ring-2 focus:ring-accent bg-transparent" placeholder="Tu nombre"required>
+                    </div>
+                </div>
+
+                <!-- Email -->
+                <div class="mb-4 relative">
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Correo Electrónico</label>
+                    <div class="flex items-center border border-gray-300 dark:border-gray-600 rounded-lg overflow-hidden">
+                        <span class="px-3 bg-gray-100 dark:bg-gray-700 text-gray-500">
+                            <i class="fa-solid fa-envelope"></i>
+                        </span>
+                        <input type="email" id="email" class="w-full px-4 py-3 focus:outline-none focus:ring-2 focus:ring-accent bg-transparent" placeholder="susana.lujan474@gmail.com" required>
+                    </div>
+                </div>
+
+                <!-- Asunto -->
+                <div class="mb-4 relative">
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Asunto</label>
+                    <div class="flex items-center border border-gray-300 dark:border-gray-600 rounded-lg overflow-hidden">
+                        <span class="px-3 bg-gray-100 dark:bg-gray-700 text-gray-500">
+                            <i class="fa-solid fa-heading"></i>
+                        </span>
+                        <input type="text" id="asunto" class="w-full px-4 py-3 focus:outline-none focus:ring-2 focus:ring-accent bg-transparent" placeholder="Motivo de tu mensaje"required>
+                    </div>
+                </div>
+
+                <!-- Mensaje -->
+                <div class="mb-6">
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Mensaje</label>
+                    <textarea rows="4" id="mensaje" class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent bg-transparent" placeholder="Escribe tu mensaje aquí..."required></textarea>
+                </div>
+
+                <!-- Botón de Enviar -->
+                <button type="submit" class="w-full bg-secondary text-white py-3 rounded-lg font-medium transition duration-300 hover:bg-opacity-90 transform hover:-translate-y-1 shadow-md">
+                    Enviar mensaje <i class="fa-solid fa-paper-plane ml-2"></i>
+                </button>
+            </form>
+        </div>
+
+        <!-- Redes sociales -->
+        <div class="mt-8 text-lg">
+            <p>Sígueme en mis redes:</p>
+            <div class="flex justify-center space-x-4 mt-4">
+                <a href="https://www.linkedin.com/in/tuperfil" class="text-white hover:text-accent text-2xl">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/susana474" class="text-white hover:text-accent text-2xl">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="mailto:susana.lujan474@gmail.com" class="text-white hover:text-accent text-2xl">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Footer -->
+    <footer class="bg-darkblue text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <h3 class="text-xl font-bold">Susana Lujan Luizaga</h3>
+                    <p class="text-gray-300">Ingeniera Industrial</p>
+                </div>
+                <div class="flex space-x-4">
+    <!-- WhatsApp -->
+    <a href="https://wa.me/59172459254" target="_blank" class="text-white hover:text-secondary">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
+
+    <!-- TikTok -->
+    <a href="https://www.tiktok.com/@susanalujan177?_t=ZM-8uYuGFECrll&_r=1" target="_blank" class="text-white hover:text-secondary">
+        <i class="fa-brands fa-tiktok text-3xl"></i>
+    </a>
+</div>
+
+            </div>
+            <div class="mt-8 text-center text-gray-400 text-sm">
+                &copy; 2025 Susana Lujan Luizaga. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("contact-form");
+    
+    form.addEventListener("submit", async function (event) {
+        event.preventDefault();
+
+        const formData = {
+            nombre: document.getElementById("nombre").value,
+            email: document.getElementById("email").value,
+            asunto: document.getElementById("asunto").value,
+            mensaje: document.getElementById("mensaje").value
+        };
+
+        try {
+            const response = await fetch("http://localhost:5000/contacto", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData)
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+                alert("Mensaje enviado con éxito 🚀");
+                form.reset();
+            } else {
+                alert("Error: " + result.error);
+            }
+        } catch (error) {
+            alert("No se pudo conectar con el servidor.");
+        }
+    });
+});
+
+        // Toggle mobile menu
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.remove('hidden');
+            } else {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+        function toggleInfo(id, btn) {
+            const element = document.getElementById(id);
+
+            if (element.classList.contains("hidden")) {
+                element.classList.remove("hidden");
+                setTimeout(() => {
+                    element.classList.remove("opacity-0");
+                    element.classList.remove("max-h-0");
+                    element.classList.add("max-h-40");
+                }, 10);
+                btn.textContent = "Ver menos ⬆";
+            } else {
+                element.classList.add("opacity-0");
+                element.classList.add("max-h-0");
+                setTimeout(() => {
+                    element.classList.add("hidden");
+                }, 300);
+                btn.textContent = "Ver más ➝";
+            }
+        }
+    </script>
+</body>
+</html>
