@@ -63,11 +63,6 @@ def recibir_mensaje():
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=10000)
 
-if __name__ == "__main__":
-    import uvicorn
-    port = int(os.getenv("PORT", 10000))
-    logger.info(f"🚀 Iniciando servidor en puerto {port}")
-    # Escanear PDFs al iniciar la aplicación (opcional)
-    scan_and_process_pdfs()
-    uvicorn.run(app, host="0.0.0.0", port=port)
