@@ -345,6 +345,48 @@
                         </div>
                     </div>
                 </div>
+                <!-- Proyecto Odoo (nuevo para sección Automatizaciones) -->
+<div class="bg-white rounded-xl shadow-custom overflow-hidden card-hover border border-gray-100">
+  <div class="relative">
+    <div class="h-56 bg-gray-200 flex items-center justify-center overflow-hidden">
+      <div class="carousel relative w-full">
+        <!-- Imagenes del carusel -->
+        <div class="flex transition-transform duration-700 ease-in-out w-full" style="transform: translateX(0%);" id="odoo-carousel-track">
+          <img onclick="expandImage(this.src)" src="https://res.cloudinary.com/dkw9vxuwi/image/upload/v1752316374/Screenshot_2025-07-12_062909_aurykv.png" alt="Cliente Odoo"  class="w-auto h-auto max-h-[500px] rounded-lg">
+          <img onclick="expandImage(this.src)" src="https://res.cloudinary.com/dkw9vxuwi/image/upload/v1752316373/Screenshot_2025-07-12_062812_mkpnas.png" alt="Producto Odoo"  class="w-auto h-auto max-h-[500px] rounded-lg">
+          <img onclick="expandImage(this.src)" src="https://res.cloudinary.com/dkw9vxuwi/image/upload/v1752316374/Screenshot_2025-07-12_063225_vixgbp.png" alt="Pedido Odoo" class="w-auto h-auto max-h-[500px] rounded-lg">
+          <img onclick="expandImage(this.src)" src="https://res.cloudinary.com/dkw9vxuwi/image/upload/v1752316605/Screenshot_2025-07-12_063607_ksdp8g.png" alt="Factura Odoo" class="w-auto h-auto max-h-[500px] rounded-lg">
+          <img onclick="expandImage(this.src)" src="https://res.cloudinary.com/dkw9vxuwi/image/upload/v1752316373/Screenshot_2025-07-12_062234_fpbycx.png" alt="Pedido Odoo" class="w-auto h-auto max-h-[500px] rounded-lg">
+          <img onclick="expandImage(this.src)" src="https://res.cloudinary.com/dkw9vxuwi/image/upload/v1752316374/Screenshot_2025-07-12_063117_wme0zi.png" alt="Factura Odoo" class="w-auto h-auto max-h-[500px] rounded-lg">
+        </div>
+      </div>
+    </div>
+    <button onclick="moveCarousel('left')" class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-darkblue text-white px-2 py-1 rounded-full z-10">&#10094;</button>
+    <button onclick="moveCarousel('right')" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-darkblue text-white px-2 py-1 rounded-full z-10">&#10095;</button>
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-darkblue mb-2 flex items-center">
+      <i class="fa-brands fa-odnoklassniki mr-2 text-secondary"></i>
+      Mini ERP de Ventas con Odoo
+    </h3>
+    <p class="text-gray-600 text-sm mb-4">
+      Simulación del ciclo de ventas en Odoo: creación de cliente, producto, pedido de venta y factura. Explora el funcionamiento básico de un ERP real.
+    </p>
+    <div class="flex flex-wrap gap-2">
+      <span class="px-3 py-1 bg-lightblue text-darkblue rounded-full text-xs font-medium">ERP</span>
+      <span class="px-3 py-1 bg-lightblue text-darkblue rounded-full text-xs font-medium">Odoo</span>
+      <span class="px-3 py-1 bg-lightblue text-darkblue rounded-full text-xs font-medium">Ventas</span>
+    </div>
+  </div>
+</div>
+
+<div id="imageModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-75">
+  <span class="absolute top-4 right-6 text-white text-3xl cursor-pointer" onclick="closeModal()">&times;</span>
+  <img id="expandedImage" class="max-w-4xl max-h-[90vh] rounded-lg shadow-lg border-4 border-white" />
+</div>
+
+
+
             </div>
         </div>
     </section>
@@ -856,6 +898,33 @@ document.addEventListener("DOMContentLoaded", function () {
                 btn.textContent = "Ver más ➝";
             }
         }
+
+  let currentSlide = 0;
+  const track = document.getElementById('odoo-carousel-track');
+  const totalSlides = track.children.length;
+
+  function moveCarousel(direction) {
+    if (direction === 'right') {
+      currentSlide = (currentSlide + 1) % totalSlides;
+    } else {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+    }
+    track.style.transform = `translateX(-${currentSlide * 100}%)`;
+  }
+
+   function expandImage(src) {
+    const modal = document.getElementById('imageModal');
+    const img = document.getElementById('expandedImage');
+    img.src = src;
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+  }
+
+  function closeModal() {
+    const modal = document.getElementById('imageModal');
+    modal.classList.remove('flex');
+    modal.classList.add('hidden');
+  }
     </script>
 </body>
 </html>
